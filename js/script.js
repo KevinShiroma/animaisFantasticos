@@ -95,19 +95,19 @@ initAnimaScroll();
 //   }
 // }
 
-function pessoa(name, age) {
-  const nome = name;
-  const idade = age;
-  function andar() {
-    console.log(this.nome + " andou");
-  }
+function Pessoa(name, age) {
+  this.nome = name;
+  this.idade = age;
+  this.andar = function () {
+    console.log(nome + " andou");
+  };
 }
 
 // Crie 3 pessoas, João - 20 anos,
 // Maria - 25 anos, Bruno - 15 anos
 
-const pessoa1 = new pessoa("João", 20);
-const pessoa2 = new pessoa("Maria", 25);
+const pessoa1 = new Pessoa("João", 20);
+const pessoa2 = new Pessoa("Maria", 25);
 
 // Crie uma Constructor Function (Dom) para manipulação
 // de listas de elementos do dom. Deve conter as seguintes
@@ -117,4 +117,15 @@ const pessoa2 = new pessoa("Maria", 25);
 // addClass(classe), adiciona a classe a todos os elementos
 // removeClass(classe), remove a classe a todos os elementos
 
-function dom() {}
+function Dom(seletor) {
+  const elementList = document.querySelectorAll(seletor);
+  this.elements = elementList;
+  this.addClass = function (classe) {
+    elementList.forEach((element) => {
+      element.classList.add(classe);
+    });
+  };
+}
+
+const listaItens = new Dom(".menu");
+listaItens.addClass("ativar");
