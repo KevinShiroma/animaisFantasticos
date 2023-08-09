@@ -287,6 +287,5 @@ body {
 
 .js .js-scroll.ativo {
   opacity: 1;
-
   transform: translate3d(0, 0, 0);
 }
