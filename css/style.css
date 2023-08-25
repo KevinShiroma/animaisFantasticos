@@ -131,14 +131,6 @@ body {
   grid-column: 3;
 }
 
-.js .js-tabcontent section {
-  display: none;
-}
-.js .js-tabcontent > section.ativo {
-  display: block;
-  animation: show 0.5s forwards;
-}
-
 .animais-descricao section {
   margin-bottom: 3rem;
 }
@@ -236,10 +228,22 @@ body {
   }
 }
 
-@keyframes show {
+@keyframes show-right {
   from {
     opacity: 0;
     transform: translate3d(-30px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes show-down {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
   }
 
   to {
@@ -260,32 +264,50 @@ body {
   }
 }
 
-.js .js-accordion dd {
+.js [data-tab="content"] section {
+  display: none;
+}
+[data-tab="content"] > section.ativo {
+  display: block;
+  animation: show 0.5s forwards;
+}
+
+[data-tab="content"] section.ativo.show-right {
+  display: block;
+  animation: show-right 0.5s forwards;
+}
+
+[data-tab="content"] section.ativo.show-down {
+  display: block;
+  animation: show-down 0.5s forwards;
+}
+
+.js [data-anime="accordion"] dd {
   display: none;
 }
 
-.js .js-accordion dt::after {
+.js [data-anime="accordion"] dt::after {
   content: "⤵";
   margin-left: 10px;
 }
 
-.js .js-accordion dt.ativo::after {
+.js [data-anime="accordion"] dt.ativo::after {
   content: "⤴";
   margin-left: 10px;
 }
 
-.js .js-accordion dd.ativo {
+.js [data-anime="accordion"] dd.ativo {
   display: block;
   animation: slideDown 0.5s forwards;
 }
 
-.js .js-scroll {
+.js [data-anime="scroll"] {
   opacity: 0;
   transform: translate3d(-30px, 0, 0);
   transition: 0.3s;
 }
 
-.js .js-scroll.ativo {
+.js [data-anime="scroll"].ativo {
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }

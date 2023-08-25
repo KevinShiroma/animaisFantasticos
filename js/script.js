@@ -1,6 +1,6 @@
 function initTabNav() {
-  const clickImg = document.querySelectorAll(".js-tabmenu li");
-  const descAnimais = document.querySelectorAll(".js-tabcontent section");
+  const clickImg = document.querySelectorAll("[data-tab='menu'] li");
+  const descAnimais = document.querySelectorAll("[data-tab='content'] section");
 
   if (clickImg.length && descAnimais.length) {
     descAnimais[0].classList.add("ativo");
@@ -9,7 +9,8 @@ function initTabNav() {
       descAnimais.forEach((section) => {
         section.classList.remove("ativo");
       });
-      descAnimais[index].classList.add("ativo");
+      const animaDirecao = descAnimais[index].dataset.anime;
+      descAnimais[index].classList.add("ativo", animaDirecao);
     }
 
     clickImg.forEach((itemMenu, index) => {
@@ -22,7 +23,9 @@ function initTabNav() {
 initTabNav();
 
 function initAccordion() {
-  const accordionList = document.querySelectorAll(".js-accordion dt");
+  const accordionList = document.querySelectorAll(
+    "[data-anime='accordion'] dt"
+  );
   const activeClass = "ativo";
   if (accordionList.length) {
     accordionList[0].classList.add(activeClass);
@@ -57,7 +60,9 @@ function initScrollSuave() {
     //   behavior: "smooth",
     // });
   }
-  const linksInternos = document.querySelectorAll('.js-menu a[href^="#"');
+  const linksInternos = document.querySelectorAll(
+    '[data-menu="suave"] a[href^="#"'
+  );
   linksInternos.forEach((link) => {
     link.addEventListener("click", scrollToSection);
   });
@@ -65,7 +70,7 @@ function initScrollSuave() {
 initScrollSuave();
 
 function initAnimaScroll() {
-  const sections = document.querySelectorAll(".js-scroll");
+  const sections = document.querySelectorAll("[data-anime='scroll']");
   if (sections.length) {
     const windowMetade = window.innerHeight * 0.6;
 
@@ -86,19 +91,18 @@ function initAnimaScroll() {
 }
 initAnimaScroll();
 
-// Transforme o objeto abaixo em uma Constructor Function
-// const pessoa = {
-//   nome: 'Nome pessoa',
-//   idade: 0,
-//   andar() {
-//     console.log(this.nome + ' andou');
-//   }
-// }
+/////////
 
-function Pessoa(name, age) {
-  this.nome = name;
-  this.idade = age;
-  this.andar = function () {
-    console.log(nome + " andou");
-  };
-}
+// Adicione um atributo data-anime="show-down" e
+// data-anime="show-right" a todos as section's
+// com descricão dos animais.
+
+// Utilizando estes atributos, adicione a classe
+// show-down ou show-right a sua respectiva section
+// assim que a mesma aparecer na tela (animacao tab)
+
+// No CSS faça com que show-down anime de cima para baixo
+// e show-right continue com a mesma animação da esquerda
+// para a direita
+
+// Substitua todas as classes js- por data atributes.
