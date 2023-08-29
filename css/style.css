@@ -1,10 +1,12 @@
 @import url("./global.css");
 @import url("./header.css");
-@import url("./modal.css");
-
 @import url("./content.css");
 @import url("./faq.css");
 @import url("./contato.css");
+
+@import url("./modal.css");
+@import url("./tooltip.css");
+@import url("./menu-dropdown.css");
 
 @media (max-width: 700px) {
   grid-container {
