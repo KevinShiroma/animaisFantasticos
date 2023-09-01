@@ -19,7 +19,7 @@
 }
 
 @media (max-width: 700px) {
-  .numeros {
+  .numeros-grid {
     grid-column: 1;
   }
 }
