@@ -8,6 +8,7 @@
 @import url("./tooltip.css");
 @import url("./menu-dropdown.css");
 @import url("./menu-hamburguer.css");
+@import url("./numeros.css");
 
 @media (max-width: 700px) {
   .grid-container {
