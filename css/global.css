@@ -45,7 +45,7 @@ body.active {
   .grid-container {
     grid-template-columns: 1fr;
   }
-  .menu,
+
   .grid-section,
   .copy {
     grid-column: 1;

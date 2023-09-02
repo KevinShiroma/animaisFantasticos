@@ -1,20 +1,6 @@
-@import url("./global.css");
-@import url("./header.css");
-@import url("./content.css");
-@import url("./faq.css");
-@import url("./contato.css");
-
-@import url("./modal.css");
-@import url("./tooltip.css");
-@import url("./menu-dropdown.css");
-@import url("./menu-hamburguer.css");
-@import url("./numeros.css");
-
-[data-hora] {
-  align-self: center;
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: red;
-}
+@import 'geral.css';
+@import 'modal.css';
+@import 'tooltip.css';
+@import 'dropdown-menu.css';
+@import 'menu-mobile.css';
+@import 'numeros.css';
