@@ -1,4 +1,4 @@
-import ani from "./outsideclick.js";
+import outsideClick from "./outsideclick.js";
 
 export default function animaNumeros() {
   function animacaoNumeros() {
