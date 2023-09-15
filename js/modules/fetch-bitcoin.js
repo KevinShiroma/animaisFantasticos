@@ -10,4 +10,4 @@ export default function initFetchBitcoin() {
     });
 }
 
-//https://blockchain.info/ticker
+// https://blockchain.info/ticker

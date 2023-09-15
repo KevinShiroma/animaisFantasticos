@@ -1,5 +1,3 @@
-import outsideClick from "./outsideclick.js";
-
 export default function animaNumeros() {
   function animacaoNumeros() {
     const numeros = document.querySelectorAll("[data-numero]");
@@ -10,7 +8,7 @@ export default function animaNumeros() {
 
       let start = 0;
       const timer = setInterval(() => {
-        start = start + incremento;
+        start += incremento;
         numero.innerText = start;
         if (start > total) {
           numero.innerText = total;
@@ -20,6 +18,7 @@ export default function animaNumeros() {
     });
   }
 
+  let observer;
   const observeTarget = document.querySelector(".numeros");
   function handleMutation(mutation) {
     if (mutation[0].target.classList.contains("ativo")) {
@@ -28,7 +27,6 @@ export default function animaNumeros() {
     }
   }
 
-  const observer = new MutationObserver(handleMutation);
-
+  observer = new MutationObserver(handleMutation);
   observer.observe(observeTarget, { attributes: true });
 }
