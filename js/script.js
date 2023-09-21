@@ -45,5 +45,5 @@ funcionamento.init();
 const animaScroll = new AnimacaoScroll('[data-anime="scroll"]');
 animaScroll.init();
 
-fetchAnimais("../../animaisapi.json", ".numeros-grid");
+fetchAnimais("./animaisapi.json", ".numeros-grid");
 fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
