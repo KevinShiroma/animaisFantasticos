@@ -31,5 +31,6 @@ export default class AnimacaoScroll {
       this.checkDistance();
       window.addEventListener("scroll", this.checkDistance);
     }
+    return this;
   }
 }
